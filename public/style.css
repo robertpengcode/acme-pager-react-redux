@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: verdana;
+}
+
+.appBox {
+  width: 60%;
+  height: 80vh;
+  margin: 2rem auto;
+}
+
+h1 {
+  color: black;
+  text-align: center;
+}
+
+.tableBox {
+  width: 100%;
+  margin: 0.5rem auto;
+  height: 58vh;
+  border: 3px solid lavender;
+  overflow: scroll;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+thead {
+    background-color: lavender;
+}
+
+th {
+  text-align: left;
+} 
+
+td {
+    word-wrap: break-word;
+}
+
+.cell1 {
+    width: 15%;
+    height: 3rem;
+
+}
+
+.cell2 {
+    width: 15%;
+    height: 3rem;
+}
+
+.cell3 {
+    width: 35%;
+    height: 3rem;
+}
+
+.cell4 {
+    width: 35%;
+    height: 3rem;
+}
+
+.oddRow {
+    background-color: white;
+}
+
+.evenRow {
+    background-color: lightgray;
+}
+
+.pagerBox {
+  width: 70%;
+  margin: 1rem auto;
+  height: 6vh;
+  border: 3px solid lavender;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pagesList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  margin: 0 0.5rem;
+}
+
+.pageListItem {
+  list-style: none;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  line-height: 2rem;
+}
+
+.pageListItem a {
+  text-decoration: none !important;
+  color: black !important;
+}
+
+.active-page-link {
+  background-color: lavender;
+}
+
+.pageListItem:hover:not(.active-page-link) {
+  background-color: gainsboro;
+}
