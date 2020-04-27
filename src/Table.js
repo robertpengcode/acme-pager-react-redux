@@ -23,11 +23,14 @@ class Table extends Component {
             {!employees.length
               ? "loading"
               : employees.map((employee, id) => (
-                  <tr className={id % 2 === 0 ? "oddRow" : "evenRow"}>
+                  <tr className={id % 2 === 0 ? "row oddRow" : "row evenRow"}>
                     <td className="cell1">{employee.firstName}</td>
                     <td className="cell2">{employee.lastName}</td>
                     <td className="cell3">{employee.email}</td>
-                    <td className="cell4">{employee.title}</td>
+                    <td className="cell4 btnCell">{employee.title}
+                    <button className="rowBtn" id="editBtn">Edit</button>
+                    <button className="rowBtn" id="deleteBtn">Delete</button>
+                    </td>
                   </tr>
                 ))}
           </tbody>

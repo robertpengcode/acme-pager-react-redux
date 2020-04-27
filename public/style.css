@@ -28,47 +28,95 @@ table {
   width: 100%;
   table-layout: fixed;
   border-collapse: collapse;
+  position: relative;
 }
 
 thead {
-    background-color: lavender;
+  background-color: lavender;
 }
 
 th {
   text-align: left;
-} 
+  position: sticky;
+  top: 0;
+  background-color: lavender;
+}
 
 td {
-    word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .cell1 {
-    width: 15%;
-    height: 3rem;
-
+  width: 15%;
+  height: 3rem;
 }
 
 .cell2 {
-    width: 15%;
-    height: 3rem;
+  width: 15%;
+  height: 3rem;
 }
 
 .cell3 {
-    width: 35%;
-    height: 3rem;
+  width: 35%;
+  height: 3rem;
 }
 
 .cell4 {
-    width: 35%;
-    height: 3rem;
+  width: 35%;
+  height: 3rem;
+}
+
+.btnCell {
+    position: relative;
+}
+
+.row:hover {
+  background-color: rgb(238, 236, 142);
 }
 
 .oddRow {
-    background-color: white;
+  background-color: white;
 }
 
 .evenRow {
-    background-color: lightgray;
+  background-color: lightgray;
+}
+
+.rowBtn {
+  width: 60px;
+  height: 30px;
+  border-radius: 0.7rem;
+  font-size: 0.8rem;
+}
+
+#deleteBtn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  visibility: hidden;
+}
+
+#editBtn {
+  position: absolute;
+  right: 80px;
+  top: 10px;
+  visibility: hidden;
+}
+
+.row:hover #deleteBtn {
+  background-color: #c49191;
+  color: white;
+  border: 2px solid white;
+  visibility: visible;
+  cursor: pointer;
+}
+
+.row:hover #editBtn {
+  background-color: rgb(149, 182, 149);
+  color: white;
+  border: 2px solid white;
+  visibility: visible;
+  cursor: pointer;
 }
 
 .pagerBox {
@@ -111,4 +159,5 @@ td {
 
 .pageListItem:hover:not(.active-page-link) {
   background-color: gainsboro;
+  transition: background-color 0.3s;
 }
