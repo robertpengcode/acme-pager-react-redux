@@ -42,6 +42,10 @@ th {
   background-color: lavender;
 }
 
+tr {
+  position: relative;
+}
+
 td {
   word-wrap: break-word;
 }
@@ -66,10 +70,6 @@ td {
   height: 3rem;
 }
 
-.btnCell {
-    position: relative;
-}
-
 .row:hover {
   background-color: rgb(238, 236, 142);
 }
@@ -90,18 +90,22 @@ td {
 }
 
 #deleteBtn {
-  position: absolute;
-  right: 10px;
-  top: 10px;
   visibility: hidden;
+  position: absolute;
+  right: 5px;
 }
 
 #editBtn {
-  position: absolute;
-  right: 80px;
-  top: 10px;
   visibility: hidden;
+  position: absolute;
+  right: 70px;
 }
+
+#createBtn {
+    visibility: hidden;
+    position: absolute;
+    right: 135px;
+  }
 
 .row:hover #deleteBtn {
   background-color: #c49191;
@@ -112,12 +116,20 @@ td {
 }
 
 .row:hover #editBtn {
-  background-color: rgb(149, 182, 149);
+  background-color: rgb(137, 162, 216);
   color: white;
   border: 2px solid white;
   visibility: visible;
   cursor: pointer;
 }
+
+.row:hover #createBtn {
+    background-color: rgb(149, 182, 149);
+    color: white;
+    border: 2px solid white;
+    visibility: visible;
+    cursor: pointer;
+  }
 
 .pagerBox {
   width: 70%;

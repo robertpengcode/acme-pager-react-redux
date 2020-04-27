@@ -27,10 +27,16 @@ class Table extends Component {
                     <td className="cell1">{employee.firstName}</td>
                     <td className="cell2">{employee.lastName}</td>
                     <td className="cell3">{employee.email}</td>
-                    <td className="cell4 btnCell">{employee.title}
-                    <button className="rowBtn" id="editBtn">Edit</button>
-                    <button className="rowBtn" id="deleteBtn">Delete</button>
-                    </td>
+                    <td className="cell4 btnCell">{employee.title}</td>
+                    <button className="rowBtn" id="createBtn">
+                      Create
+                    </button>
+                    <button className="rowBtn" id="editBtn">
+                      Edit
+                    </button>
+                    <button className="rowBtn" id="deleteBtn">
+                      Delete
+                    </button>
                   </tr>
                 ))}
           </tbody>
@@ -41,4 +47,3 @@ class Table extends Component {
 }
 
 export default Table;
-
