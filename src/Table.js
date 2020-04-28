@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import CreateUpdate from "./CreateUpdate";
+import RowButtuns from "./RowButtuns";
 
 class Table extends Component {
   constructor() {
     super();
     this.state = {
-      showForm: false,
-    }
+      showForm: false
+    };
 
     this.handleCreate = this.handleCreate.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
@@ -14,18 +15,20 @@ class Table extends Component {
   }
 
   handleCreate() {
-    console.log('handle create!')
-    this.setState({showForm: true});
+    console.log("handle create!");
+    this.setState({ showForm: true });
   }
 
   handleEdit() {
-    console.log('handle create!')
-    this.setState({showForm: true});
+    console.log("handle edit!");
+    this.setState({ showForm: true });
   }
 
+  
+
   handleClose() {
-    console.log('handle close!')
-    this.setState({showForm: false});
+    console.log("handle close!");
+    this.setState({ showForm: false });
   }
 
   render() {
@@ -35,7 +38,7 @@ class Table extends Component {
 
     return (
       <div className="tableBox">
-        { showForm ? <CreateUpdate handleClose={ handleClose }/> : null }
+        {showForm ? <CreateUpdate handleClose={handleClose} /> : null}
         <table>
           <thead>
             <tr>
@@ -54,15 +57,12 @@ class Table extends Component {
                     <td className="cell2">{employee.lastName}</td>
                     <td className="cell3">{employee.email}</td>
                     <td className="cell4 btnCell">{employee.title}</td>
-                    <button className="rowBtn" id="createBtn" onClick={handleCreate}>
-                      Create
-                    </button>
-                    <button className="rowBtn" id="editBtn" onClick={handleEdit}>
-                      Edit
-                    </button>
-                    <button className="rowBtn" id="deleteBtn">
-                      Delete
-                    </button>
+                    {!showForm ? (
+                      <RowButtuns
+                        handleCreate={handleCreate}
+                        handleEdit={handleEdit}
+                      />
+                    ) : null}
                   </tr>
                 ))}
           </tbody>
