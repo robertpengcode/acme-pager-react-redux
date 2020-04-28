@@ -4,6 +4,7 @@ class CreateUpdate extends Component {
   constructor() {
     super();
     this.state = {
+      id: 500,
       firstName: "",
       lastName: "",
       email: "",
@@ -16,6 +17,7 @@ class CreateUpdate extends Component {
   handleCancel() {
     console.log("handle cancel!");
     this.setState({
+      id: "",
       firstName: "",
       lastName: "",
       email: "",
@@ -23,15 +25,28 @@ class CreateUpdate extends Component {
     });
   }
 
-  handleSubmit(ev) {
+  async handleSubmit(ev) {
     ev.preventDefault();
-    console.log("handle submit!");
-    this.setState({
-      firstName: "",
-      lastName: "",
-      email: "",
-      title: ""
-    });
+    const newEmployee = {
+      id: this.state.id,
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      email: this.state.email,
+      title: this.state.title
+    };
+    console.log("handle submit!", newEmployee);
+
+    try {
+      await this.props.handlePost(newEmployee);
+    } catch (ex) {
+      console.log("error", ex.response.data.message);
+    }
+    // this.setState({
+    //     firstName: "",
+    //     lastName: "",
+    //     email: "",
+    //     title: ""
+    // });
   }
 
   render() {

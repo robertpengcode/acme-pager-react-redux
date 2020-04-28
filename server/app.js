@@ -38,6 +38,12 @@ app.get("/api/employees/:page?", (req, res, next) => {
   });
 });
 
+app.post("/api/employees", (req, res, next) => {
+  Employee.create(req.body)
+    .then(employee => res.status(201).send(employee))
+    .catch(next);
+});
+
 app.delete("/api/employees/:email", async (req, res, next) => {
   try {
     const employee = await Employee.findOne({

@@ -29,16 +29,16 @@ class Table extends Component {
     this.setState({ showForm: false });
   }
 
-  
-
   render() {
-    const { employees, handleDelete } = this.props;
+    const { employees, handlePost, handleDelete } = this.props;
     const { showForm } = this.state;
     const { handleCreate, handleEdit, handleClose } = this;
 
     return (
       <div className="tableBox">
-        {showForm ? <CreateUpdate handleClose={handleClose} /> : null}
+        {showForm ? (
+          <CreateUpdate handleClose={handleClose} handlePost={handlePost} />
+        ) : null}
         <table>
           <thead>
             <tr>
