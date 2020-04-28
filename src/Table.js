@@ -24,15 +24,15 @@ class Table extends Component {
     this.setState({ showForm: true });
   }
 
-  
-
   handleClose() {
     console.log("handle close!");
     this.setState({ showForm: false });
   }
 
+  
+
   render() {
-    const { employees } = this.props;
+    const { employees, handleDelete } = this.props;
     const { showForm } = this.state;
     const { handleCreate, handleEdit, handleClose } = this;
 
@@ -61,6 +61,8 @@ class Table extends Component {
                       <RowButtuns
                         handleCreate={handleCreate}
                         handleEdit={handleEdit}
+                        handleDelete={handleDelete}
+                        email={employee.email}
                       />
                     ) : null}
                   </tr>

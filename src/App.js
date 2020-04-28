@@ -13,6 +13,7 @@ class App extends Component {
       currentPage: 1
     };
     this.loadPage = this.loadPage.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   async componentDidMount() {
@@ -34,14 +35,23 @@ class App extends Component {
     });
   }
 
+  async handleDelete(email) {
+    console.log("handle delete!", email);
+    await axios.delete(`/api/employees/${email}`);
+    const updatedEmployees = this.state.employees.filter(
+      employee => employee.email !== email
+    );
+    this.setState({ employees: updatedEmployees });
+  }
+
   render() {
     const { employees, count, currentPage } = this.state;
-    const { loadPage } = this;
+    const { loadPage, handleDelete } = this;
     return (
       <HashRouter>
         <div className="appBox">
           <h1>ACME Pager</h1>
-          <Table employees={employees} />
+          <Table employees={employees} handleDelete={handleDelete} />
           <Pager count={count} loadPage={loadPage} currentPage={currentPage} />
         </div>
       </HashRouter>
