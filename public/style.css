@@ -22,6 +22,7 @@ h1 {
   height: 58vh;
   border: 3px solid lavender;
   overflow: scroll;
+  position: relative;
 }
 
 table {
@@ -102,10 +103,10 @@ td {
 }
 
 #createBtn {
-    visibility: hidden;
-    position: absolute;
-    right: 135px;
-  }
+  visibility: hidden;
+  position: absolute;
+  right: 135px;
+}
 
 .row:hover #deleteBtn {
   background-color: #c49191;
@@ -124,12 +125,12 @@ td {
 }
 
 .row:hover #createBtn {
-    background-color: rgb(149, 182, 149);
-    color: white;
-    border: 2px solid white;
-    visibility: visible;
-    cursor: pointer;
-  }
+  background-color: rgb(149, 182, 149);
+  color: white;
+  border: 2px solid white;
+  visibility: visible;
+  cursor: pointer;
+}
 
 .pagerBox {
   width: 70%;
@@ -173,3 +174,63 @@ td {
   background-color: gainsboro;
   transition: background-color 0.3s;
 }
+
+.createBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.createForm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: lightgray;
+  border: #c49191 2px solid;
+}
+
+.formRow1 {
+  width: 100%;
+  display: flex;
+}
+
+.formRow2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.formInput {
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.formBtn {
+  width: 60px;
+  height: 30px;
+  border-radius: 0.7rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin: 0 0.2rem;
+}
+
+#cancelBtn {
+  background-color: rgb(149, 182, 149);
+  color: white;
+  border: 2px solid white;
+}
+
+#submitBtn {
+  background-color: rgb(137, 162, 216);
+  color: white;
+  border: 2px solid white;
+}
+
+#closeBtn {
+    background-color: #c49191;
+    color: white;
+    border: 2px solid white;
+  }
